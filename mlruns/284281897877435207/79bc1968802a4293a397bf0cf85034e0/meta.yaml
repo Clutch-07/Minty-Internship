@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/borac/Documents/GitHub/Minty-Internship/mlruns/284281897877435207/79bc1968802a4293a397bf0cf85034e0/artifacts
+end_time: 1757601177029
+entry_point_name: ''
+experiment_id: '284281897877435207'
+lifecycle_stage: active
+run_id: 79bc1968802a4293a397bf0cf85034e0
+run_name: amazing-kite-404
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1757601176866
+status: 3
+tags: []
+user_id: borac

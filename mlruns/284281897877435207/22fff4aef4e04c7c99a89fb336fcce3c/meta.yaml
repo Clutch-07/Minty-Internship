@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/borac/Documents/GitHub/Minty-Internship/mlruns/284281897877435207/22fff4aef4e04c7c99a89fb336fcce3c/artifacts
+end_time: 1757600378437
+entry_point_name: ''
+experiment_id: '284281897877435207'
+lifecycle_stage: active
+run_id: 22fff4aef4e04c7c99a89fb336fcce3c
+run_name: indecisive-seal-909
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1757600378371
+status: 3
+tags: []
+user_id: borac

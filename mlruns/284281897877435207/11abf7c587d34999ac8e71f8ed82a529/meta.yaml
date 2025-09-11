@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/borac/Documents/GitHub/Minty-Internship/mlruns/284281897877435207/11abf7c587d34999ac8e71f8ed82a529/artifacts
+end_time: 1757600612610
+entry_point_name: ''
+experiment_id: '284281897877435207'
+lifecycle_stage: active
+run_id: 11abf7c587d34999ac8e71f8ed82a529
+run_name: dashing-goat-907
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1757600612447
+status: 3
+tags: []
+user_id: borac

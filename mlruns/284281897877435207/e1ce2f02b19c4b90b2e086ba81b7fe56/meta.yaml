@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/borac/Documents/GitHub/Minty-Internship/mlruns/284281897877435207/e1ce2f02b19c4b90b2e086ba81b7fe56/artifacts
+end_time: 1757600378323
+entry_point_name: ''
+experiment_id: '284281897877435207'
+lifecycle_stage: active
+run_id: e1ce2f02b19c4b90b2e086ba81b7fe56
+run_name: awesome-pig-141
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1757600378199
+status: 3
+tags: []
+user_id: borac

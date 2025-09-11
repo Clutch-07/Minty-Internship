@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/borac/Documents/GitHub/Minty-Internship/mlruns/284281897877435207/2fa9c8bdc0fb4c90a6ab9486c1e19eac/artifacts
+end_time: 1757601176556
+entry_point_name: ''
+experiment_id: '284281897877435207'
+lifecycle_stage: active
+run_id: 2fa9c8bdc0fb4c90a6ab9486c1e19eac
+run_name: popular-ant-289
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1757601176389
+status: 3
+tags: []
+user_id: borac

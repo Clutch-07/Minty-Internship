@@ -1,0 +1,13 @@
+# Gün 3: Deney Takibi Notları
+
+Bu çalışmada Lojistik Regresyon modeli için 3 farklı hiperparametre kombinasyonu MLflow kullanılarak denendi.
+
+1: "ngram_range": (1, 1), "max_features": 5000, "C": 1.0,
+2: "ngram_range": (1, 2), "max_features": 5000, "C": 1.0, ngram_range değişti
+3: "ngram_range": (1, 1), "max_features": 3000, "C": 10.0, max_features ve C değişti
+
+## En İyi Model: 3
+En iyi F1 skorunu (`0.9008`) veren model, aşağıdaki parametrelerle elde edildi:
+- `ngram_range`: (1, 1)
+- `C`: 10.0
+- `max_features`: 3000

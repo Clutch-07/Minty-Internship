@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/borac/Documents/GitHub/Minty-Internship/mlruns/284281897877435207/efadfcb1566643b3a101d124c5da5f88/artifacts
+end_time: 1757600612140
+entry_point_name: ''
+experiment_id: '284281897877435207'
+lifecycle_stage: active
+run_id: efadfcb1566643b3a101d124c5da5f88
+run_name: orderly-dolphin-533
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1757600611966
+status: 3
+tags: []
+user_id: borac
