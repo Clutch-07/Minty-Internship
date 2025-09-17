@@ -1,0 +1,1 @@
+{"text":"URGENT! you have won a 1 week FREE membership","prediction":{"label":"SPAM","confidence":0.5880629404341078}}{"text":"Can we schedule a meeting for tomorrow at 10 AM?","prediction":{"label":"HAM","confidence":0.9150748423667798}}{"text":"Click this link to claim your prize http://fakelink.com","prediction":{"label":"SPAM","confidence":0.875758681034005}0}

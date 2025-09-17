@@ -1,5 +1,5 @@
 import joblib
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 # 1. FastAPI uygulamasını başlat
@@ -22,6 +22,25 @@ except FileNotFoundError:
     vectorizer = None
     model = None
 
+def predict_text(text: str, model, vectorizer) -> dict:
+    """
+    Saf tahmin fonksiyonu: girilen metin için etiket ve güven skorunu döndürür.
+    Test edilebilirlik için API'den ayrıştırıldı.
+    """
+    if model is None or vectorizer is None:
+        raise RuntimeError("Model is not loaded.")
+    if not isinstance(text, str):
+        raise ValueError("Input text must be a string.")
+    stripped = text.strip()
+    if not stripped:
+        raise ValueError("Input text is empty.")
+    message_vec = vectorizer.transform([stripped])
+    prediction = model.predict(message_vec)
+    probability = model.predict_proba(message_vec)
+    label = "SPAM" if prediction[0] == 1 else "HAM"
+    confidence = float(probability[0][prediction[0]])
+    return {"label": label, "confidence": confidence}
+
 # 3. Tahmin Endpoint'ini Oluştur
 # @app.post("/predict") ifadesi, bu fonksiyonun /predict adresine gelen
 # POST isteklerini karşılayacağını belirtir.
@@ -32,27 +51,20 @@ async def predict(message: Message):
 
     - **text**: Tahmin edilecek metin.
     """
-    if not model or not vectorizer:
-        return {"error": "Model is not loaded. Please check server logs."}
-
-    # a. Gelen metni vektöre dönüştür
-    message_vec = vectorizer.transform([message.text])
+    # a. Giriş doğrulama ve model kontrolü
+    if model is None or vectorizer is None:
+        # 500 yerine anlamlı mesaj
+        raise HTTPException(status_code=503, detail="Model is not loaded. Please check server logs.")
+    if message.text is None or not isinstance(message.text, str) or not message.text.strip():
+        raise HTTPException(status_code=422, detail="Field 'text' must be a non-empty string.")
 
     # b. Tahmin yap
-    prediction = model.predict(message_vec)
-    probability = model.predict_proba(message_vec)
+    result = predict_text(message.text, model, vectorizer)
 
-    # c. Sonucu hazırla
-    label = "SPAM" if prediction[0] == 1 else "HAM"
-    confidence = probability[0][prediction[0]]
-
-    # d. Sonucu JSON olarak geri döndür
+    # c. Sonucu JSON olarak geri döndür
     return {
         "text": message.text,
-        "prediction": {
-            "label": label,
-            "confidence": float(confidence)
-        }
+        "prediction": result
     }
 
 # Kök adrese basit bir hoş geldin mesajı ekleyelim
